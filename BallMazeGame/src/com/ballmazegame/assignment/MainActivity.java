@@ -1,6 +1,9 @@
 package com.ballmazegame.assignment;
 
 
+import java.util.Observable;
+import java.util.Observer;
+
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -8,7 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends Activity implements Observer, OnClickListener {
 
 	
 	public static Typeface typeface;
@@ -53,21 +56,26 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		switch(v.getId()){
 			case R.id.start_game:
-			
 				break;
-			case R.id.how_to:
 				
+			case R.id.how_to:				
 				break;
+				
 			case R.id.credits:
-				
 				break;
-			case R.id.high_score:
 				
+			case R.id.high_score:
 				break;	
+				
 			case R.id.quit_game:
 				finish();
 				break;
 		}
+		
+	}
+
+	public void update(Observable observable, Object data) {
+		// TODO Auto-generated method stub
 		
 	}
 }
