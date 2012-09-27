@@ -5,6 +5,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -58,7 +59,9 @@ public class MainActivity extends Activity implements Observer, OnClickListener 
 			case R.id.start_game:
 				break;
 				
-			case R.id.how_to:				
+			case R.id.how_to:
+				Intent howToIntent = new Intent(this, HowToActivity.class);
+				startActivity(howToIntent);
 				break;
 				
 			case R.id.credits:

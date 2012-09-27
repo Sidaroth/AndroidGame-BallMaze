@@ -12,5 +12,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_touch_listener">TouchListener</string>
     <string name="title_activity_tiltaball_view">TiltaballView</string>
+    <string name="title_activity_how_to">HowToActivity</string>
 
 </resources>
