@@ -65,6 +65,8 @@ public class MainActivity extends Activity implements Observer, OnClickListener 
 				break;
 				
 			case R.id.credits:
+				Intent derp = new Intent(this, HowToActivity.class);
+				startActivity(derp);
 				break;
 				
 			case R.id.high_score:
