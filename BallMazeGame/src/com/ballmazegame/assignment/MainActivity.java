@@ -70,6 +70,8 @@ public class MainActivity extends Activity implements Observer, OnClickListener 
 				break;
 				
 			case R.id.high_score:
+				Intent highscoreIntent = new Intent(this, HighscoreActivity.class);
+				startActivity(highscoreIntent);
 				break;	
 				
 			case R.id.quit_game:
