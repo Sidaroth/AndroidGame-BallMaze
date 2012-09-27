@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.example.ballmazegame;
+package com.ballmazegame.assignment;
 
 public final class R {
     public static final class attr {
@@ -30,6 +30,7 @@ public final class R {
     }
     public static final class menu {
         public static final int activity_main=0x7f060000;
+        public static final int activity_touch_listener=0x7f060001;
     }
     public static final class string {
         public static final int Credits=0x7f040006;
@@ -37,10 +38,12 @@ public final class R {
         public static final int How_to_play=0x7f040005;
         public static final int Quit_game=0x7f040008;
         public static final int app_name=0x7f040000;
+        public static final int hello_world=0x7f040009;
         public static final int imageDescription=0x7f040003;
         public static final int menu_settings=0x7f040001;
         public static final int start_game=0x7f040004;
         public static final int title_activity_main=0x7f040002;
+        public static final int title_activity_touch_listener=0x7f04000a;
     }
     public static final class style {
         public static final int AppTheme=0x7f050000;
