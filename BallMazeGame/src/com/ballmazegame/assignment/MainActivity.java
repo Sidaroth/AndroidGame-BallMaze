@@ -86,7 +86,3 @@ public class MainActivity extends Activity implements Observer, OnClickListener 
 		
 	}
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 1c00bbb47a1e475c3ad2b563e7f40795e4eea614
