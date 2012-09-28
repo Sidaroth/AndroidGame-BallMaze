@@ -24,6 +24,8 @@
         </activity>
         <activity
             android:name=".view.TiltaballView"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_tiltaball_view" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -31,6 +33,8 @@
         </activity>
         <activity
             android:name=".HowToActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_how_to" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -38,6 +42,8 @@
         </activity>
         <activity
             android:name=".HighScoreActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_high_score" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
