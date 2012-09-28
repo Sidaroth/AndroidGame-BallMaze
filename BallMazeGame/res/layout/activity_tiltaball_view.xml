@@ -5,7 +5,7 @@
 
 <ImageView
         android:contentDescription="@string/imageDescription"
-        android:src="@drawable/main_menu"
+        android:src="@drawable/maze1"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
    	/>

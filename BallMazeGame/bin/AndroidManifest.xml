@@ -37,8 +37,8 @@
                 android:value="com.ballmazegame.assignment.MainActivity" />
         </activity>
         <activity
-            android:name=".HighscoreActivity"
-            android:label="@string/title_activity_highscore" >
+            android:name=".HighScoreActivity"
+            android:label="@string/title_activity_high_score" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ballmazegame.assignment.MainActivity" />

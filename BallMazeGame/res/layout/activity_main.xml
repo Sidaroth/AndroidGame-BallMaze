@@ -24,38 +24,41 @@
         android:orientation="vertical" >
         
 <!--    layout_margin = space between menu text -->
-        
+        
         <TextView
+            android:id="@+id/start_game"
+            style="@style/MenuFont"
+            android:layout_width="wrap_content"
             android:layout_gravity="right"
-	        android:text="@string/start_game"
-	        android:id="@+id/start_game"
-	        style="@style/MenuFont"
-	         />
-        
+            android:text="@string/start_game" />
+
         <TextView
-            android:text="@string/How_to_play"
             android:id="@+id/how_to"
             style="@style/MenuFont"
-            />
-        
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/How_to_play" />
+        
         <TextView
-            android:text="@string/Credits"
             android:id="@+id/credits"
             style="@style/MenuFont"
-            />
-        
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/Credits" />
+        
         <TextView
-            android:text="@string/High_score"
             android:id="@+id/high_score"
             style="@style/MenuFont"
-            />
-        
-        <TextView 
-            android:text="@string/Quit_game"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/High_score" />
+
+        <TextView
             android:id="@+id/quit_game"
             style="@style/MenuFont"
-            />
-    
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/Quit_game" />
     
     </LinearLayout>
 </RelativeLayout>

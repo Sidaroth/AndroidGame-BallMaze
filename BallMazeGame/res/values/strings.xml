@@ -14,5 +14,6 @@
     <string name="title_activity_tiltaball_view">TiltaballView</string>
     <string name="title_activity_how_to">HowToActivity</string>
     <string name="title_activity_highscore">HighscoreActivity</string>
+    <string name="title_activity_high_score">HighScoreActivity</string>
 
 </resources>

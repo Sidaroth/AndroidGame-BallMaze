@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
+import com.ballmazegame.assignment.view.TiltaballView;
+
 public class MainActivity extends Activity implements Observer, OnClickListener {
 
 	
@@ -57,6 +59,8 @@ public class MainActivity extends Activity implements Observer, OnClickListener 
 		
 		switch(v.getId()){
 			case R.id.start_game:
+				Intent startGameIntent = new Intent(this, TiltaballView.class);
+				startActivity(startGameIntent);
 				break;
 				
 			case R.id.how_to:
@@ -70,7 +74,7 @@ public class MainActivity extends Activity implements Observer, OnClickListener 
 				break;
 				
 			case R.id.high_score:
-				Intent highscoreIntent = new Intent(this, HighscoreActivity.class);
+				Intent highscoreIntent = new Intent(this, HighScoreActivity.class);
 				startActivity(highscoreIntent);
 				break;	
 				
