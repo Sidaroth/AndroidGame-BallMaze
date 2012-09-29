@@ -5,7 +5,6 @@ import java.util.Observer;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
 
 import com.ballmazegame.assignment.R;
 import com.ballmazegame.assignment.model.Ball;
