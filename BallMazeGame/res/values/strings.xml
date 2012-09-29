@@ -6,10 +6,8 @@
     
 <!--     Activities  -->
     <string name="title_activity_main">Ball Maze Game</string>
-    <string name="title_activity_touch_listener">TouchListener</string>
     <string name="title_activity_tiltaball_view">TiltaballView</string>
     <string name="title_activity_how_to">HowToActivity</string>
-    <string name="title_activity_highscore">HighscoreActivity</string>
     <string name="title_activity_high_score">HighScoreActivity</string>
     <string name="title_activity_credits">CreditsActivity</string>
 
@@ -38,4 +36,7 @@
 <!--     Activity - High Score    -->
     <string name="highScoreMain">High Score</string>
 
+<!--     Activity - TiltaballView (Main Game)     -->
+	<string name="score">Score: </string>
+	
 </resources>

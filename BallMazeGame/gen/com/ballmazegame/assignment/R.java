@@ -53,42 +53,43 @@ public final class R {
         public static final int activity_touch_listener=0x7f060006;
     }
     public static final class string {
-        public static final int Credits=0x7f04000b;
-        public static final int High_score=0x7f04000c;
-        public static final int How_to_play=0x7f04000a;
-        public static final int Quit_game=0x7f04000d;
+        public static final int Credits=0x7f040009;
+        public static final int High_score=0x7f04000a;
+        public static final int How_to_play=0x7f040008;
+        public static final int Quit_game=0x7f04000b;
         /**      General app     
          */
         public static final int app_name=0x7f040000;
-        public static final int creators=0x7f040016;
+        public static final int creators=0x7f040014;
         /**      Activity - Credits    
          */
-        public static final int creditsMain=0x7f040015;
+        public static final int creditsMain=0x7f040013;
         /**      Activity - High Score    
          */
-        public static final int highScoreMain=0x7f040017;
-        public static final int howToImage1=0x7f040012;
-        public static final int howToImage2=0x7f040013;
-        public static final int howToImage3=0x7f040014;
+        public static final int highScoreMain=0x7f040015;
+        public static final int howToImage1=0x7f040010;
+        public static final int howToImage2=0x7f040011;
+        public static final int howToImage3=0x7f040012;
         /**     Activity - How To Play   
          */
-        public static final int howToPlayGame1=0x7f04000f;
-        public static final int howToPlayGame2=0x7f040010;
-        public static final int howToPlayGame3=0x7f040011;
-        public static final int imageDescription=0x7f04000e;
+        public static final int howToPlayGame1=0x7f04000d;
+        public static final int howToPlayGame2=0x7f04000e;
+        public static final int howToPlayGame3=0x7f04000f;
+        public static final int imageDescription=0x7f04000c;
         public static final int menu_settings=0x7f040001;
+        /**      Activity - TiltaballView (Main Game)     
+         */
+        public static final int score=0x7f040016;
         /**    Main Menu & Menu Buttons    
          */
-        public static final int start_game=0x7f040009;
-        public static final int title_activity_credits=0x7f040008;
-        public static final int title_activity_high_score=0x7f040007;
-        public static final int title_activity_highscore=0x7f040006;
-        public static final int title_activity_how_to=0x7f040005;
+        public static final int start_game=0x7f040007;
+        public static final int title_activity_credits=0x7f040006;
+        public static final int title_activity_high_score=0x7f040005;
+        public static final int title_activity_how_to=0x7f040004;
         /**      Activities  
          */
         public static final int title_activity_main=0x7f040002;
-        public static final int title_activity_tiltaball_view=0x7f040004;
-        public static final int title_activity_touch_listener=0x7f040003;
+        public static final int title_activity_tiltaball_view=0x7f040003;
     }
     public static final class style {
         public static final int AppTheme=0x7f050000;

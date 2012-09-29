@@ -11,6 +11,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -22,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name=".view.TiltaballView"
             android:configChanges="orientation|keyboardHidden"
@@ -31,6 +33,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ballmazegame.assignment.MainActivity" />
         </activity>
+        
         <activity
             android:name=".HowToActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -40,6 +43,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ballmazegame.assignment.MainActivity" />
         </activity>
+        
         <activity
             android:name=".HighScoreActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -49,13 +53,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ballmazegame.assignment.MainActivity" />
         </activity>
+        
         <activity
             android:name=".CreditsActivity"
-            android:label="@string/title_activity_credits" >
+            android:label="@string/title_activity_credits"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ballmazegame.assignment.MainActivity" />
         </activity>
+        
     </application>
 
 </manifest>
