@@ -1,25 +1,41 @@
 <resources>
 
+<!--     General app     -->
     <string name="app_name">BallMazeGame</string>
     <string name="menu_settings">Settings</string>
+    
+<!--     Activities  -->
     <string name="title_activity_main">Ball Maze Game</string>
-    <string name="imageDescription">Main Menu Background</string>
+    <string name="title_activity_touch_listener">TouchListener</string>
+    <string name="title_activity_tiltaball_view">TiltaballView</string>
+    <string name="title_activity_how_to">HowToActivity</string>
+    <string name="title_activity_highscore">HighscoreActivity</string>
+    <string name="title_activity_high_score">HighScoreActivity</string>
+    <string name="title_activity_credits">CreditsActivity</string>
+
+    
+<!--   Main Menu & Menu Buttons    -->
     <string name="start_game">Start Game</string>
     <string name="How_to_play">How to Play</string>
     <string name="Credits">Credits</string>
     <string name="High_score">High Scores</string>
     <string name="Quit_game">Quit Game</string>
+    <string name="imageDescription">Main Menu Background</string>
+    
+<!--    Activity - How To Play   -->
     <string name="howToPlayGame1">Tilt your phone in the direction you want to move.</string>
     <string name="howToPlayGame2">The objective of the game is to get from the starting point.</string>
     <string name="howToPlayGame3">To the goal in the shortest amount of time.</string>
     <string name="howToImage1">Tilt</string>
     <string name="howToImage2">Start</string>
     <string name="howToImage3">Goal</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_touch_listener">TouchListener</string>
-    <string name="title_activity_tiltaball_view">TiltaballView</string>
-    <string name="title_activity_how_to">HowToActivity</string>
-    <string name="title_activity_highscore">HighscoreActivity</string>
-    <string name="title_activity_high_score">HighScoreActivity</string>
+    
+<!--     Activity - Credits    -->
+    <string name="creditsMain">Credits</string>
+    <string name="creators">This game was created by Christian Stokkebekk, Christian Holt and
+        Øyvind Nordli for an assignment in Mobile Systems Programming at Gjøvik University College (GUC)</string>
+
+<!--     Activity - High Score    -->
+    <string name="highScoreMain">High Score</string>
 
 </resources>
