@@ -12,8 +12,6 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager.LayoutParams;
 
-import com.ballmazegame.assignment.controller.BallController;
-import com.ballmazegame.assignment.model.BallModel;
 
 public class TiltaballView extends Activity implements SensorEventListener, Observer {
 
@@ -72,10 +70,6 @@ public class TiltaballView extends Activity implements SensorEventListener, Obse
   		 	mDrawView.mController.moveBall(currX, currY);
     	 }
      }
- 	
-
-
-     
      
 	
 	// Accuracy will not be changed during runtime, hence empty. 
