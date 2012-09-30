@@ -13,8 +13,17 @@ public class Ball extends Observable
 	private float x;
 	private float y;
 	
-	private float speed = 1.0f;
+	private float speed;
 	
+	// We need some kind of collision circle?
+	
+//	public Ball()
+//	{
+//		x = 0;
+//		y = 0;
+//		speed = 1.0f;
+//	}
+//	
 	public float getX()
 	{
 		return x;
