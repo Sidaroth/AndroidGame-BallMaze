@@ -20,6 +20,7 @@ public class BallController {
 		mBallModel = new BallModel();
 		POS_NOISE_FILTER = 0.75f;
 		NEG_NOISE_FILTER = POS_NOISE_FILTER * -1;
+		scoreTimer();
 	}
 	
 	public void moveBall( float currX, float currY )
@@ -80,12 +81,14 @@ public class BallController {
 			mBallModel.setX( yPosition );
 		}
 		
-		scoreTimer();
 	}
 
 	// Creates an anonymous timer class
 	// to implement a score deduction timer
 	// that deducts .getScoreDeductionRate() points each second. 
+	// For a visual effect, the points are removed at rate / 100 every 10ms - which by default is 1 point every 10ms. 
+	
+	// ISSUE: Crashes if the model says that it's data has been changed. 
 	public void scoreTimer()
 	{
 		Timer timer = new Timer();
@@ -95,11 +98,17 @@ public class BallController {
 			@Override
 			public void run()
 			{
-				mBallModel.setScore(mBallModel.getScore() - mBallModel.getScoreDeductionRate());
+				int currentScore = mBallModel.getScore();
+				
+				if(currentScore > 0)
+				{
+					mBallModel.setScore(currentScore - mBallModel.getScoreDeductionRate() / 100);
+				}
+				
 			}
 		};
 		
-		timer.schedule(task,  1000, 1000); // (Task, when to start, when to repeat)
+		timer.schedule(task,  10, 10); // (Task, when to start, when to repeat)
 	}
 	
 	public void updateViewSize(int viewWidth, int viewHeight) {
