@@ -20,9 +20,9 @@ public class BallModel extends Observable
 	
 	public BallModel()
 	{
-		x = 50;
-		y = 50;
-		speed = 0.0f;
+		x = 700;
+		y = 350;
+		speed = 1.0f;
 		ballRadius = 10.0f;
 	}
 	

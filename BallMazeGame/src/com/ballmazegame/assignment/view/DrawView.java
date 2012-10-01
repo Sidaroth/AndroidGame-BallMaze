@@ -16,6 +16,7 @@ public class DrawView extends View {
 	Paint paint;
 	Resources res;
 	Bitmap maze;
+	int viewWidth, viewHeight;
 	
 	public BallController mController;
 	
@@ -44,7 +45,17 @@ public class DrawView extends View {
 		paint.setColor(Color.RED);
 		
 		paint.setTextSize(30);
-		canvas.drawText(Float.toString(mController.mBallModel.getX()) + " , " + Float.toString(mController.mBallModel.getY()), 30, 200, paint);
+		canvas.drawText(Float.toString(mController.mBallModel.getX()) + " , " + Float.toString(mController.mBallModel.getY()), 800, 200, paint);
 		canvas.drawCircle(mController.mBallModel.getX(), mController.mBallModel.getY(), mController.mBallModel.getRadius(), paint);
+	}
+	
+	@Override
+	 protected void onSizeChanged(int xNew, int yNew, int xOld, int yOld){
+	     super.onSizeChanged(xNew, yNew, xOld, yOld);
+
+	     viewWidth = xNew;
+	     viewHeight = yNew;
+	     
+	     mController.updateViewSize(viewWidth, viewHeight);
 	}
 }

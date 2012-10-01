@@ -40,7 +40,6 @@ public class TiltaballView extends Activity implements SensorEventListener, Obse
 	        
 	     mInitialized = false;
 	     
-	     
 	     mDrawView = new DrawView(this);
 	     mDrawView.mController.mBallModel.addObserver(this);
 	       
@@ -63,7 +62,7 @@ public class TiltaballView extends Activity implements SensorEventListener, Obse
     	 if ( !mInitialized )
     	 {
     		 mInitialized = true;  		 
-    		 // Rearrange coordinate system here? 
+    		 // Do some initialization here?
     	 }
     	 else
     	 {
