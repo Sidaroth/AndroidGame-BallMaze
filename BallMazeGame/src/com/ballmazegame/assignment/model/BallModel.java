@@ -25,7 +25,7 @@ public class BallModel extends Observable
 	{
 		x = 700;
 		y = 350;
-		speed = 1.0f;
+		speed = 3.0f;
 		ballRadius = 10.0f;
 		
 		score = 10000;
