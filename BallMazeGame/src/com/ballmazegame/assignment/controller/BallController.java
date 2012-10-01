@@ -1,5 +1,8 @@
 package com.ballmazegame.assignment.controller;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import com.ballmazegame.assignment.model.BallModel;
 
 
@@ -8,13 +11,15 @@ public class BallController {
 	public BallModel mBallModel;
 	private float POS_NOISE_FILTER; 
 	private float NEG_NOISE_FILTER;
-	int viewWidth, viewHeight;
+	private int mViewWidth, mViewHeight;
+	
+	
 	
 	public BallController()
 	{
 		mBallModel = new BallModel();
 		POS_NOISE_FILTER = 0.75f;
-		NEG_NOISE_FILTER = POS_NOISE_FILTER * -1;		
+		NEG_NOISE_FILTER = POS_NOISE_FILTER * -1;
 	}
 	
 	public void moveBall( float currX, float currY )
@@ -37,9 +42,9 @@ public class BallController {
 			float xPosition = mBallModel.getY() + (mBallModel.getSpeed() * xDirection );
 		
 			// Checks to see if the ball goes out of bounds. 
-			if ( xPosition > ( viewHeight - mBallModel.getRadius() ))
+			if ( xPosition > ( mViewHeight - mBallModel.getRadius() ))
 			{
-				xPosition = viewHeight - mBallModel.getRadius();
+				xPosition = mViewHeight - mBallModel.getRadius();
 			}
 			else if( xPosition < ( 0 + mBallModel.getRadius() ))
 			{
@@ -52,7 +57,6 @@ public class BallController {
 		
 		if ( currY > POS_NOISE_FILTER || currY < NEG_NOISE_FILTER )
 		{
-			System.out.println( currY );
 			
 			float yDirection = -1;
 			
@@ -64,9 +68,9 @@ public class BallController {
 			float yPosition = mBallModel.getX() + (mBallModel.getSpeed() * yDirection );
 			
 			// Checks to see if the ball goes out of bounds. 
-			if ( yPosition > ( viewWidth - mBallModel.getRadius() ))
+			if ( yPosition > ( mViewWidth - mBallModel.getRadius() ))
 			{
-				yPosition = viewWidth - mBallModel.getRadius();
+				yPosition = mViewWidth - mBallModel.getRadius();
 			}
 			else if( yPosition < ( 0 + mBallModel.getRadius() ))
 			{
@@ -75,10 +79,31 @@ public class BallController {
 			
 			mBallModel.setX( yPosition );
 		}
+		
+		scoreTimer();
 	}
 
+	// Creates an anonymous timer class
+	// to implement a score deduction timer
+	// that deducts .getScoreDeductionRate() points each second. 
+	public void scoreTimer()
+	{
+		Timer timer = new Timer();
+		
+		TimerTask task = new TimerTask() {
+			
+			@Override
+			public void run()
+			{
+				mBallModel.setScore(mBallModel.getScore() - mBallModel.getScoreDeductionRate());
+			}
+		};
+		
+		timer.schedule(task,  1000, 1000); // (Task, when to start, when to repeat)
+	}
+	
 	public void updateViewSize(int viewWidth, int viewHeight) {
-		this.viewWidth = viewWidth;
-		this.viewHeight = viewHeight;
+		mViewWidth = viewWidth;
+		mViewHeight = viewHeight;
 	}
 }

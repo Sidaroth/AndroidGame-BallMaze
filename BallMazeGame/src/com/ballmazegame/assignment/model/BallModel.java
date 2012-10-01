@@ -16,6 +16,9 @@ public class BallModel extends Observable
 	private float speed;
 	private float ballRadius;
 	
+	private int score;
+	private final int SCORE_DEDUCTION_RATE;
+	
 	// We need some kind of collision circle?
 	
 	public BallModel()
@@ -24,6 +27,9 @@ public class BallModel extends Observable
 		y = 350;
 		speed = 1.0f;
 		ballRadius = 10.0f;
+		
+		score = 10000;
+		SCORE_DEDUCTION_RATE = 100;
 	}
 	
 	public float getX()
@@ -72,5 +78,20 @@ public class BallModel extends Observable
 		ballRadius = radius;
 		setChanged();
 		notifyObservers();
+	}
+	
+	public int getScore()
+	{
+		return score;
+	}
+	
+	public void setScore(int updatedScore)
+	{
+		score = updatedScore;
+	}
+	
+	public int getScoreDeductionRate()
+	{
+		return SCORE_DEDUCTION_RATE;
 	}
 }

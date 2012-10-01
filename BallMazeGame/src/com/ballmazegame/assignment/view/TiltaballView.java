@@ -1,8 +1,5 @@
 package com.ballmazegame.assignment.view;
 
-import java.util.Observable;
-import java.util.Observer;
-
 import android.app.Activity;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -13,7 +10,10 @@ import android.view.Window;
 import android.view.WindowManager.LayoutParams;
 
 
-public class TiltaballView extends Activity implements SensorEventListener, Observer {
+// This class handles the user "input" aka. the sensor input
+// I can't currently find a way to get this done inside DrawView - so for now at least, we need 1 view and 1 activity. 
+
+public class TiltaballView extends Activity implements SensorEventListener {
 
 	private DrawView mDrawView;
 	private boolean mInitialized;	
@@ -21,7 +21,7 @@ public class TiltaballView extends Activity implements SensorEventListener, Obse
 	private SensorManager mSensorManager;
 	private Sensor mAccelerometer;
 	
-	float currX, currY, lastX, lastY;
+	float currX, currY;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -37,20 +37,12 @@ public class TiltaballView extends Activity implements SensorEventListener, Obse
 	     
 	     // See comment for onResume();
 	     mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_GAME);
-	        
+	     
 	     mInitialized = false;
 	     
 	     mDrawView = new DrawView(this);
-	     mDrawView.mController.mBallModel.addObserver(this);
-	       
 	     setContentView(mDrawView);
 	 }
-	     
-	
-    public void update(Observable observable, Object data) {
-		// TODO Auto-generated method stub
-		mDrawView.invalidate();
-	}
 	
 	
 	// This is called each time the sensor gets new data. 
@@ -71,11 +63,6 @@ public class TiltaballView extends Activity implements SensorEventListener, Obse
      }
      
 	
-	// Accuracy will not be changed during runtime, hence empty. 
-	public void onAccuracyChanged(Sensor arg0, int arg1) {
-	}
-
-	
 	// Starts listening for accelerometer events on a rate suitable for games
 	// If need be, this rate can be slowed down or sped up. (Normal, Fastest, ...)
 	protected void onResume()
@@ -95,6 +82,11 @@ public class TiltaballView extends Activity implements SensorEventListener, Obse
 	{
 		super.onStop();
 		mSensorManager.unregisterListener(this);
+	}
+	
+	// We don't really care to much if the accuracy is changed, hence empty. 
+	// THIS HAS TO BE IMPLEMENTED!
+	public void onAccuracyChanged(Sensor arg0, int arg1) {
 	}
 
 }

@@ -1,5 +1,8 @@
 package com.ballmazegame.assignment.view;
 
+import java.util.Observable;
+import java.util.Observer;
+
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -11,12 +14,16 @@ import android.view.View;
 
 import com.ballmazegame.assignment.R;
 import com.ballmazegame.assignment.controller.BallController;
-public class DrawView extends View {
+
+ // This class handles the drawing of the ball and the maze bitmap. 
+ // On changes to the model, it redraws itself. 
+public class DrawView extends View implements Observer {
 
 	Paint paint;
 	Resources res;
 	Bitmap maze;
-	int viewWidth, viewHeight;
+	int mViewWidth;
+	int mViewHeight;
 	
 	public BallController mController;
 	
@@ -24,9 +31,10 @@ public class DrawView extends View {
 		super(context);
 		paint = new Paint();
 		Resources res = this.getResources(); 
-		maze = BitmapFactory.decodeResource(res, R.drawable.maze1); // TODO this has to be fix'd to take an argument ID instead of hardcoded maze1. 
+		maze = BitmapFactory.decodeResource(res, R.drawable.maze1); // TODO this has to be fix'd to take an argument ID instead of hard-coded maze1. 
 		
 		mController = new BallController();
+		mController.mBallModel.addObserver(this);
 	}
 	
 	
@@ -46,6 +54,7 @@ public class DrawView extends View {
 		
 		paint.setTextSize(30);
 		canvas.drawText(Float.toString(mController.mBallModel.getX()) + " , " + Float.toString(mController.mBallModel.getY()), 800, 200, paint);
+		canvas.drawText("Score: " + Float.toString(mController.mBallModel.getScore()), 950, 50, paint);
 		canvas.drawCircle(mController.mBallModel.getX(), mController.mBallModel.getY(), mController.mBallModel.getRadius(), paint);
 	}
 	
@@ -53,9 +62,16 @@ public class DrawView extends View {
 	 protected void onSizeChanged(int xNew, int yNew, int xOld, int yOld){
 	     super.onSizeChanged(xNew, yNew, xOld, yOld);
 
-	     viewWidth = xNew;
-	     viewHeight = yNew;
+	     mViewWidth = xNew;
+	     mViewHeight = yNew;
 	     
-	     mController.updateViewSize(viewWidth, viewHeight);
+	     mController.updateViewSize(mViewWidth, mViewHeight);
+	}
+
+
+	// On changes to the model, invalidates the currently drawn image, which in turn redraws
+	// the view with the new model data. 
+	public void update(Observable observable, Object data) {
+		this.invalidate();
 	}
 }
