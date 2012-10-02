@@ -22,21 +22,23 @@ public final class R {
     }
     public static final class id {
         public static final int creators=0x7f060001;
-        public static final int credits=0x7f06000a;
+        public static final int credits=0x7f06000c;
         public static final int creditsMain=0x7f060000;
-        public static final int high_score=0x7f06000b;
-        public static final int howToImage1=0x7f060003;
-        public static final int howToImage2=0x7f060005;
-        public static final int howToImage3=0x7f060007;
-        public static final int howToPlayGame1=0x7f060002;
-        public static final int howToPlayGame2=0x7f060004;
-        public static final int howToPlayGame3=0x7f060006;
-        public static final int how_to=0x7f060009;
-        public static final int quit_game=0x7f06000c;
-        public static final int start_game=0x7f060008;
-        public static final int x_axis=0x7f06000d;
-        public static final int y_axis=0x7f06000e;
-        public static final int z_axis=0x7f06000f;
+        public static final int high_score=0x7f06000d;
+        public static final int howToImage1=0x7f060005;
+        public static final int howToImage2=0x7f060007;
+        public static final int howToImage3=0x7f060009;
+        public static final int howToPlayGame1=0x7f060004;
+        public static final int howToPlayGame2=0x7f060006;
+        public static final int howToPlayGame3=0x7f060008;
+        public static final int how_to=0x7f06000b;
+        public static final int item_subtitle=0x7f060003;
+        public static final int item_title=0x7f060002;
+        public static final int quit_game=0x7f06000e;
+        public static final int start_game=0x7f06000a;
+        public static final int x_axis=0x7f06000f;
+        public static final int y_axis=0x7f060010;
+        public static final int z_axis=0x7f060011;
     }
     public static final class layout {
         public static final int activity_credits=0x7f030000;
@@ -44,6 +46,7 @@ public final class R {
         public static final int activity_how_to=0x7f030002;
         public static final int activity_main=0x7f030003;
         public static final int activity_tiltaball_view=0x7f030004;
+        public static final int listplaceholder=0x7f030005;
     }
     public static final class string {
         public static final int Credits=0x7f040009;
