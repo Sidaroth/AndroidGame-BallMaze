@@ -1,13 +1,8 @@
 package com.ballmazegame.assignment;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -31,38 +26,28 @@ public class HighScoreActivity extends ListActivity {
         ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
         
         try{
-            // Create a new HTTP Client
-            DefaultHttpClient defaultClient = new DefaultHttpClient();
-            // Setup the get request
-            HttpGet httpGetRequest = new HttpGet("http://game-details.com/tiltaball/highscore.php");
-
-            // Execute the request in the client
-            HttpResponse httpResponse = defaultClient.execute(httpGetRequest);
-            // Grab the response
-            BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent(), "UTF-8"));
-            String json = reader.readLine();
-
-            // Instantiate a JSON object from the request response
-            JSONObject  jsonObject = new JSONObject (json);
-            JSONArray  highscores = jsonObject.getJSONArray("highscore");
+        	JSONObject json = JSONfunctions.getJSONfromURL("http://game-details.com/tiltaball/highscore.php?");
+            JSONArray highscores = json.getJSONArray("highscore");
+            System.out.print(highscores);
             
 	        for(int i=0;i<highscores.length();i++)
-	        {						
+	        {
 				HashMap<String, String> map = new HashMap<String, String>();	
 				JSONObject e = highscores.getJSONObject(i);
-				
-				map.put("id",  String.valueOf(i));
-	        	map.put("name", "Earthquake name:" + e.getString("eqid"));
-	        	map.put("magnitude", "Magnitude: " +  e.getString("magnitude"));
-	        	mylist.add(map);			
-			}	
-            
+				//fix strings
+				map.put("placement",  String.valueOf(i));
+	        	map.put("name", "name:" + e.getString("name"));
+	        	map.put("time", "time: " +  e.getString("time"));
+	        	map.put("location", "location: " +  e.getString("location"));
+	        	mylist.add(map);
+			}
+	        
         } catch(Exception e){
             // In your production code handle any errors and catch the individual exceptions
             e.printStackTrace();
         }
         ListAdapter adapter = new SimpleAdapter(this, mylist , R.layout.activity_high_score, 
-                new String[] { "name", "magnitude" }, 
+                new String[] { "name", "time", "location" }, 
                 new int[] { R.id.item_title, R.id.item_subtitle });
 
         setListAdapter(adapter);
