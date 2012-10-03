@@ -22,11 +22,8 @@
     
 <!--    Activity - How To Play   -->
     <string name="howToPlayGame1">Tilt your phone in the direction you want to move.</string>
-    <string name="howToPlayGame2">The objective of the game is to get from the starting point.</string>
-    <string name="howToPlayGame3">To the goal in the shortest amount of time.</string>
+    <string name="howToPlayGame2">The goal of the game is to survive for as long as you can without hitting the edge of your screen.</string>
     <string name="howToImage1">Tilt</string>
-    <string name="howToImage2">Start</string>
-    <string name="howToImage3">Goal</string>
     
 <!--     Activity - Credits    -->
     <string name="creditsMain">Credits</string>
@@ -36,7 +33,7 @@
 <!--     Activity - High Score    -->
     <string name="highScoreMain">High Score</string>
     <string name="loading">Please wait, loading data</string>
-
+    
 <!--     Activity - TiltaballView (Main Game)     -->
 	<string name="score">Score: </string>
 	

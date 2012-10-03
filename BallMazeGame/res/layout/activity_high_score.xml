@@ -4,17 +4,26 @@
     android:layout_height="fill_parent"
     android:padding="7dp"
     >
-<TextView  
-	android:id="@+id/item_title"
+	<TextView  
+	android:id="@+id/placement"
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
     android:textAppearance="?android:attr/textAppearanceMedium"
     android:padding="2dp"
     android:textSize="20dp" />
+	
     <TextView  
-	android:id="@+id/item_subtitle"
+	android:id="@+id/name"
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
     android:padding="2dp"
-    android:textSize="13dp" />
+    android:textSize="20dp" />
+    
+    <TextView  
+	android:id="@+id/score"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:padding="2dp"
+    android:textSize="20dp" />
+
 </LinearLayout>

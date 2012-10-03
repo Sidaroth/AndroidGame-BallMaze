@@ -18,10 +18,8 @@ public class HowToActivity extends Activity {
 	    
 	    TextView howToPlayGame1 = (TextView) findViewById(R.id.howToPlayGame1);
 	    TextView howToPlayGame2 = (TextView) findViewById(R.id.howToPlayGame2);
-	    TextView howToPlayGame3 = (TextView) findViewById(R.id.howToPlayGame3);
 	    howToPlayGame1.setTypeface(typeface);
 	    howToPlayGame2.setTypeface(typeface);
-	    howToPlayGame3.setTypeface(typeface);
     }
 
 }
