@@ -35,6 +35,7 @@
 
 <!--     Activity - High Score    -->
     <string name="highScoreMain">High Score</string>
+    <string name="loading">Please wait, loading data</string>
 
 <!--     Activity - TiltaballView (Main Game)     -->
 	<string name="score">Score: </string>

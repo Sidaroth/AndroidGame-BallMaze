@@ -72,10 +72,11 @@ public final class R {
         public static final int howToPlayGame2=0x7f04000e;
         public static final int howToPlayGame3=0x7f04000f;
         public static final int imageDescription=0x7f04000c;
+        public static final int loading=0x7f040016;
         public static final int menu_settings=0x7f040001;
         /**      Activity - TiltaballView (Main Game)     
          */
-        public static final int score=0x7f040016;
+        public static final int score=0x7f040017;
         /**    Main Menu & Menu Buttons    
          */
         public static final int start_game=0x7f040007;
