@@ -4,10 +4,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-
+// Custom touch listener that changes the colour of the text on the main menu. 
 public class TouchListener implements View.OnTouchListener 
 {
-	
 	public boolean onTouch(View view, MotionEvent motionEvent)
 	{
 		switch(motionEvent.getAction())
@@ -24,6 +23,4 @@ public class TouchListener implements View.OnTouchListener
 		
 		return false;
 	}
-
 }
-

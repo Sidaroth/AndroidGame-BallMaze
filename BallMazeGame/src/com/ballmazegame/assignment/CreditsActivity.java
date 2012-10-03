@@ -22,8 +22,5 @@ public class CreditsActivity extends Activity {
 	    TextView creators = (TextView) findViewById(R.id.creators);
 	    creditsMain.setTypeface(typeface);
 	    creators.setTypeface(typeface);
-        
     }
-
-
 }
