@@ -57,10 +57,9 @@ public class HighScoreActivity extends ListActivity implements AsyncTaskComplete
 				JSONObject e = highscores.getJSONObject(i);
 				
 				// TODO fix strings
-				map.put("placement",  String.valueOf( i ));
-	        	map.put("name", "name:" + e.getString( "name" ));
-	        	map.put("time", "time: " +  e.getString( "time" ));
-	        	map.put("location", "location: " +  e.getString( "location" ));
+				map.put("placement", String.valueOf( i+1 ) + ".");
+	        	map.put("name", "Name:  " + e.getString( "name" ));
+	        	map.put("time", "Score:  " + e.getString( "time" ));
 	        	mylist.add(map);
 			}        
     	} 
@@ -70,8 +69,8 @@ public class HighScoreActivity extends ListActivity implements AsyncTaskComplete
     	}
         		
     	ListAdapter adapter = new SimpleAdapter(this, mylist , R.layout.activity_high_score, 
-                new String[] { "name", "time", "location" }, 
-                new int[] { R.id.item_title, R.id.item_subtitle });
+                new String[] {"placement", "name", "time" }, 
+                new int[] { R.id.placement, R.id.name, R.id.score});
 
         setListAdapter(adapter);
 	}	

@@ -32,32 +32,6 @@
         android:layout_marginLeft="100dp"
         android:gravity="center"
         android:text="@string/howToPlayGame2" />
-    
-    <ImageView
-        android:id="@+id/howToImage2"
-        android:contentDescription="@string/howToImage2"
-        android:src="@drawable/start"
-        android:layout_below="@id/howToPlayGame2"
-		android:layout_centerHorizontal="true"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
-    
-     <TextView
-        android:id="@+id/howToPlayGame3"
-        style="@style/MenuFont"
-        android:layout_below="@id/howToImage2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="100dp"
-		android:gravity="center"
-        android:text="@string/howToPlayGame3" />
-    
-    <ImageView
-        android:id="@+id/howToImage3"
-        android:contentDescription="@string/howToImage3"
-        android:src="@drawable/goal"
-        android:layout_below="@id/howToPlayGame3"
-		android:layout_centerHorizontal="true"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+
     </RelativeLayout>
 </ScrollView>
