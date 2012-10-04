@@ -1,7 +1,7 @@
 <resources>
 
     <!-- General app -->
-    <string name="app_name">BallMazeGame</string>
+    <string name="app_name">tiltaball</string>
     <string name="menu_settings">Settings</string>
 
     <!-- Activities -->

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ballmazegame.assignment"
+    package="com.tiltaball.assignment"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -32,7 +32,7 @@
             android:screenOrientation="landscape" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ballmazegame.assignment.MainActivity" />
+                android:value="com.tiltaball.assignment.MainActivity" />
         </activity>
         <activity
             android:name=".HowToActivity"
@@ -41,7 +41,7 @@
             android:screenOrientation="landscape" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ballmazegame.assignment.MainActivity" />
+                android:value="com.tiltaball.assignment.MainActivity" />
         </activity>
         <activity
             android:name=".HighscoreActivity"
@@ -50,7 +50,7 @@
             android:screenOrientation="landscape" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ballmazegame.assignment.MainActivity" />
+                android:value="com.tiltaball.assignment.MainActivity" />
         </activity>
         <activity
             android:name=".CreditsActivity"
@@ -59,7 +59,7 @@
             android:screenOrientation="landscape" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ballmazegame.assignment.MainActivity" />
+                android:value="com.tiltaball.assignment.MainActivity" />
         </activity>
         <activity
             android:name=".EndGameActivity"
@@ -68,7 +68,7 @@
             android:label="@string/title_activity_end_game" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ballmazegame.assignment.MainActivity" />
+                android:value="com.tiltaball.assignment.MainActivity" />
         </activity>
     </application>
 
