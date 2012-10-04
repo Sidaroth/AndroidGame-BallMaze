@@ -12,6 +12,8 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager.LayoutParams;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -26,6 +28,9 @@ public class EndGameActivity extends Activity {
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
+    	requestWindowFeature(Window.FEATURE_NO_TITLE); //hide title bar
+		 //set app to full screen and keep screen on 
+		getWindow().setFlags(0xFFFFFFFF, LayoutParams.FLAG_FULLSCREEN | LayoutParams.FLAG_KEEP_SCREEN_ON);	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end_game);
         
@@ -92,7 +97,6 @@ public class EndGameActivity extends Activity {
 		
 		if(isOnline())
 		{
-			System.out.println("derp");
 			new DataSend().execute();
 			
 			Intent intent = new Intent(this, TiltaballView.class);
@@ -100,15 +104,10 @@ public class EndGameActivity extends Activity {
 		}
 	}
 	
-	@Override
-	public void onBackPressed() {
-		   Intent intent = new Intent(this, MainActivity.class);
-		   startActivity(intent);
-	}
-	
 	public void Quit(View view)
 	{
-		Intent intent = new Intent(this, MainActivity.class);
+		Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(intent);
 	}
 }

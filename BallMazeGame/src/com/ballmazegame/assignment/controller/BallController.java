@@ -26,6 +26,8 @@ public class BallController {
 	public BallController(Context context)
 	{
 		mBallModel = new BallModel();
+		
+		
 		POS_NOISE_FILTER = 0.5f;
 		NEG_NOISE_FILTER = POS_NOISE_FILTER * -1;
 		xDirection = -1;
@@ -113,6 +115,14 @@ public class BallController {
 	}
 	
 
+	public void restart()
+	{
+		mBallModel.setX(mViewWidth / 2);
+		mBallModel.setY(mViewHeight / 2);
+		mBallModel.setSpeed(3);
+		mBallModel.setScore(0);
+	}
+	
 	// Creates an anonymous timer class
 	// to implement a score addition timer
 	// that adds .getScoreAdditionRate() points each time it runs.
@@ -137,5 +147,7 @@ public class BallController {
 	public void updateViewSize(int viewWidth, int viewHeight) {
 		mViewWidth = viewWidth;
 		mViewHeight = viewHeight;
+		mBallModel.setX(mViewWidth / 2);
+		mBallModel.setY(mViewHeight / 2);
 	}
 }

@@ -14,7 +14,7 @@
     
     <!-- Main Menu & Menu Buttons -->
     <string name="start_game">Start</string>
-    <string name="How_to_play">Hvordan Spille</string>
+    <string name="How_to_play">Spillehjelp</string>
     <string name="Credits">Credits</string>
     <string name="High_score">Poengliste</string>
     <string name="Quit_game">Avslutt</string>

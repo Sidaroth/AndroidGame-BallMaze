@@ -1,26 +1,28 @@
 package com.ballmazegame.assignment;
 
 
-import java.util.Observable;
-import java.util.Observer;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.WindowManager.LayoutParams;
 import android.widget.TextView;
 
 import com.ballmazegame.assignment.view.TiltaballView;
 
-public class MainActivity extends Activity implements Observer, OnClickListener {
+public class MainActivity extends Activity implements OnClickListener {
 
 	
 	public static Typeface typeface;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		requestWindowFeature(Window.FEATURE_NO_TITLE); //hide title bar
+		 //set app to full screen and keep screen on 
+		 getWindow().setFlags(0xFFFFFFFF, LayoutParams.FLAG_FULLSCREEN | LayoutParams.FLAG_KEEP_SCREEN_ON);	
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_main);
 	    
@@ -82,11 +84,5 @@ public class MainActivity extends Activity implements Observer, OnClickListener 
 				finish();
 				break;
 		}
-		
-	}
-
-	public void update(Observable observable, Object data) {
-		// TODO Auto-generated method stub
-		
 	}
 }

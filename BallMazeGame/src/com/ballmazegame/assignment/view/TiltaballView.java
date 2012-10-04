@@ -36,7 +36,7 @@ public class TiltaballView extends Activity implements SensorEventListener {
 //		 super.onCreate(savedInstanceState);
 	     
 	     mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-	     mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER); // Linear excludes gravity. 
+	     mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER); // Accesses the accelerometer.
 	     
 	     // See comment for onResume();
 	     mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_GAME);
@@ -47,11 +47,11 @@ public class TiltaballView extends Activity implements SensorEventListener {
 	     setContentView(mDrawView);
 	 }
 	
-	@Override
-	public void onBackPressed() {
-	   Intent setIntent = new Intent(this, MainActivity.class);
-	   startActivity(setIntent);
-	}
+//	@Override
+//	public void onBackPressed() {
+//	   Intent setIntent = new Intent(this, MainActivity.class);
+//	   startActivity(setIntent);
+//	}
 	
 	// This is called each time the sensor gets new data. 
      public void onSensorChanged(SensorEvent event) {
@@ -70,6 +70,12 @@ public class TiltaballView extends Activity implements SensorEventListener {
     	 }
      }
      
+    public void onBackPressed()
+    {
+		Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		startActivity(intent);
+    }
 	
 	// Starts listening for accelerometer events on a rate suitable for games
 	// If need be, this rate can be slowed down or sped up. (Normal, Fastest, ...)
@@ -93,7 +99,6 @@ public class TiltaballView extends Activity implements SensorEventListener {
 	}
 	
 	// We don't really care to much if the accuracy is changed, hence empty. 
-	// THIS HAS TO BE IMPLEMENTED!
 	public void onAccuracyChanged(Sensor arg0, int arg1) {
 	}
 

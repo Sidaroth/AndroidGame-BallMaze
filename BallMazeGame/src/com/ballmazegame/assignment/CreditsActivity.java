@@ -3,6 +3,8 @@ package com.ballmazegame.assignment;
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager.LayoutParams;
 import android.widget.TextView;
 
 
@@ -13,6 +15,9 @@ public class CreditsActivity extends Activity {
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
+    	requestWindowFeature(Window.FEATURE_NO_TITLE); //hide title bar
+		 //set app to full screen and keep screen on 
+		getWindow().setFlags(0xFFFFFFFF, LayoutParams.FLAG_FULLSCREEN | LayoutParams.FLAG_KEEP_SCREEN_ON);	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
         
