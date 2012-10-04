@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- General app -->
+    <string name="app_name">BallMazeGame</string>
+    <string name="menu_settings">Instillinger</string>
+
+    <!-- Activities -->
+    <string name="title_activity_main">Ball Maze Game</string>
+    <string name="title_activity_tiltaball_view">TiltaballView</string>
+    <string name="title_activity_how_to">HowToActivity</string>
+    <string name="title_activity_high_score">HighScoreActivity</string>
+    <string name="title_activity_credits">CreditsActivity</string>
+    <string name="title_activity_end_game">EndGameActivity</string>
+    
+    <!-- Main Menu & Menu Buttons -->
+    <string name="start_game">Start</string>
+    <string name="How_to_play">Hvordan Spille</string>
+    <string name="Credits">Credits</string>
+    <string name="High_score">Poengliste</string>
+    <string name="Quit_game">Avslutt</string>
+    <string name="imageDescription">Main Menu Background</string>
+
+    <!-- Activity - How To Play -->
+    <string name="howToPlayGame1">Vipp telefonen din i den rettningen du vil flytte ballen.</string>
+    <string name="howToPlayGame2">Målet i spillet er å overleve så lenge som mulig uten at ballen treffer kanten av skjermen din.</string>
+    <string name="howToImage1">Tilt</string>
+
+    <!-- Activity - Credits -->
+    <string name="creditsMain">Credits</string>
+    <string name="creators">Dette spillet ble laget av Christian Stokkebekk, Christian Holt og Øyvind Nordli for en oppgave
+        i programmering av mobile systemer på Høgskolen i Gjøvik(HIG).</string>
+
+    <!-- Activity - High Score -->
+    <string name="highScoreMain">High Score</string>
+    <string name="loading">Vennligst vent, laster data</string>
+
+    <!-- Activity - TiltaballView (Main Game) -->
+    <string name="score">Poeng: </string>
+    
+	<!--     Activity - End Game  -->
+    <string name="hint_namefield">Skriv navnet ditt her...</string>
+    <string name="button_quit">Avslutt</string>
+    <string name="button_submit">Send og Restart</string>
+
+
+</resources>

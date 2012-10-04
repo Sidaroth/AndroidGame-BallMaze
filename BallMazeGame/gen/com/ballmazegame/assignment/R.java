@@ -11,15 +11,11 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int goal=0x7f020000;
-        public static final int how_to=0x7f020001;
-        public static final int ic_action_search=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int main_menu=0x7f020004;
-        public static final int main_menu_standing=0x7f020005;
-        public static final int maze1=0x7f020006;
-        public static final int start=0x7f020007;
-        public static final int title_screen=0x7f020008;
+        public static final int how_to=0x7f020000;
+        public static final int ic_action_search=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int main_menu=0x7f020003;
+        public static final int title_screen=0x7f020004;
     }
     public static final class id {
         public static final int button_quit=0x7f060004;
@@ -59,22 +55,27 @@ public final class R {
         public static final int How_to_play=0x7f040009;
         public static final int Quit_game=0x7f04000c;
         /**  General app 
+ General app 
          */
         public static final int app_name=0x7f040000;
         public static final int button_quit=0x7f040017;
         public static final int button_submit=0x7f040018;
         public static final int creators=0x7f040012;
         /**  Activity - Credits 
+ Activity - Credits 
          */
         public static final int creditsMain=0x7f040011;
         /**  Activity - High Score 
+ Activity - High Score 
          */
         public static final int highScoreMain=0x7f040013;
         /**      Activity - End Game  
+     Activity - End Game  
          */
         public static final int hint_namefield=0x7f040016;
         public static final int howToImage1=0x7f040010;
         /**  Activity - How To Play 
+ Activity - How To Play 
          */
         public static final int howToPlayGame1=0x7f04000e;
         public static final int howToPlayGame2=0x7f04000f;
@@ -82,9 +83,11 @@ public final class R {
         public static final int loading=0x7f040014;
         public static final int menu_settings=0x7f040001;
         /**  Activity - TiltaballView (Main Game) 
+ Activity - TiltaballView (Main Game) 
          */
         public static final int score=0x7f040015;
         /**  Main Menu & Menu Buttons 
+ Main Menu & Menu Buttons 
          */
         public static final int start_game=0x7f040008;
         public static final int title_activity_credits=0x7f040006;
@@ -92,6 +95,7 @@ public final class R {
         public static final int title_activity_high_score=0x7f040005;
         public static final int title_activity_how_to=0x7f040004;
         /**  Activities 
+ Activities 
          */
         public static final int title_activity_main=0x7f040002;
         public static final int title_activity_tiltaball_view=0x7f040003;
