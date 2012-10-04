@@ -13,11 +13,11 @@ public class BallModel extends Observable
 	private float x;
 	private float y;
 	
-	private float speed;
+	private int speed;
 	private float ballRadius;
 	
-	private int score;
-	private final int SCORE_DEDUCTION_RATE;
+	private float score;
+	private final float SCORE_ADDITION_RATE;
 	
 	// We need some kind of collision circle?
 	
@@ -25,11 +25,11 @@ public class BallModel extends Observable
 	{
 		x = 700;
 		y = 350;
-		speed = 3.0f;
+		speed = 3;
 		ballRadius = 10.0f;
 		
-		score = 10000;
-		SCORE_DEDUCTION_RATE = 100;
+		score = 0;
+		SCORE_ADDITION_RATE = 2.5f;
 	}
 	
 	public float getX()
@@ -56,12 +56,12 @@ public class BallModel extends Observable
 		notifyObservers();
 	}
 	
-	public float getSpeed()
+	public int getSpeed()
 	{
 		return speed;
 	}
 	
-	public void setSpeed(float speed)
+	public void setSpeed(int speed)
 	{
 		this.speed = speed;
 		setChanged();
@@ -80,18 +80,18 @@ public class BallModel extends Observable
 		notifyObservers();
 	}
 	
-	public int getScore()
+	public float getScore()
 	{
 		return score;
 	}
 	
-	public void setScore(int updatedScore)
+	public void setScore(float updatedScore)
 	{
 		score = updatedScore;
 	}
 	
-	public int getScoreDeductionRate()
+	public float getScoreAdditionRate()
 	{
-		return SCORE_DEDUCTION_RATE;
+		return SCORE_ADDITION_RATE;
 	}
 }

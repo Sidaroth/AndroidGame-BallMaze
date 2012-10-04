@@ -3,92 +3,131 @@ package com.ballmazegame.assignment.controller;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import android.content.Context;
+import android.content.Intent;
+
+import com.ballmazegame.assignment.EndGameActivity;
 import com.ballmazegame.assignment.model.BallModel;
 
 
 public class BallController {
 	
+	public final static String SCORE = "com.ballmazegame.assignment.SCORE";
+	
 	public BallModel mBallModel;
 	private float POS_NOISE_FILTER; 
 	private float NEG_NOISE_FILTER;
 	private int mViewWidth, mViewHeight;
+	Context context;
+	
+	private int xDirection, yDirection;
 	
 	
-	
-	public BallController()
+	public BallController(Context context)
 	{
 		mBallModel = new BallModel();
-		POS_NOISE_FILTER = 0.75f;
+		POS_NOISE_FILTER = 0.5f;
 		NEG_NOISE_FILTER = POS_NOISE_FILTER * -1;
+		xDirection = -1;
+		yDirection = -1;
+		
+		this.context = context;
 		scoreTimer();
 	}
 	
 	public void moveBall( float currX, float currY )
 	{
-		
-		// If above noise levels, change position. Else do nothing. 
+		// If above noise levels, change direction. Else keep moving at same speed. 
 		
 		// NOTE! in xPosition and yPosition, the opposite .get() is called
 		// This is due to the screen being landscape oriented - So in a way X = Y, and Y = X. 
+		float xPosition = mBallModel.getX();
+		float yPosition = mBallModel.getY();
+		
+		if ((int)mBallModel.getScore() % 250 == 0)
+		{
+			mBallModel.setSpeed(mBallModel.getSpeed() + 1);
+		}
 	
 		if( currX > POS_NOISE_FILTER || currX < NEG_NOISE_FILTER )
 		{
-			float xDirection = -1;
-			
 			if ( currX > 0 )
 			{
 				xDirection = 1;
 			}
-			
-			float xPosition = mBallModel.getY() + (mBallModel.getSpeed() * xDirection );
-		
-			// Checks to see if the ball goes out of bounds. 
-			if ( xPosition > ( mViewHeight - mBallModel.getRadius() ))
+			else
 			{
-				xPosition = mViewHeight - mBallModel.getRadius();
-			}
-			else if( xPosition < ( 0 + mBallModel.getRadius() ))
-			{
-				xPosition = 0 + mBallModel.getRadius();
+				xDirection = -1;
 			}
 			
-			
-			mBallModel.setY( xPosition );
 		}
 		
 		if ( currY > POS_NOISE_FILTER || currY < NEG_NOISE_FILTER )
 		{
-			
-			float yDirection = -1;
-			
+						
 			if ( currY > 0 )
 			{
 				yDirection = 1;
 			}
-		
-			float yPosition = mBallModel.getX() + (mBallModel.getSpeed() * yDirection );
-			
-			// Checks to see if the ball goes out of bounds. 
-			if ( yPosition > ( mViewWidth - mBallModel.getRadius() ))
+			else
 			{
-				yPosition = mViewWidth - mBallModel.getRadius();
+				yDirection = -1;
 			}
-			else if( yPosition < ( 0 + mBallModel.getRadius() ))
-			{
-				yPosition = 0 + mBallModel.getRadius();
-			}
-			
-			mBallModel.setX( yPosition );
 		}
 		
+		if ( xPosition > ( mViewWidth - mBallModel.getRadius() ))
+		{
+			endGame();
+		}
+		else if( xPosition < ( 0 + mBallModel.getRadius() ))
+		{
+			endGame();	
+		}
+		
+		if ( yPosition > ( mViewHeight - mBallModel.getRadius() ))
+		{
+			endGame();
+		}
+		else if( yPosition < ( 0 + mBallModel.getRadius() ))
+		{
+			endGame();
+		}
+		
+		
+		mBallModel.setY( mBallModel.getY() + (mBallModel.getSpeed() * xDirection ));
+		mBallModel.setX( mBallModel.getX() + (mBallModel.getSpeed() * yDirection ));
+		
+
 	}
 
-	// Creates an anonymous timer class
-	// to implement a score deduction timer
-	// that deducts .getScoreDeductionRate() points each second. 
-	// For a visual effect, the points are removed at rate / 100 every 10ms - which by default is 1 point every 10ms. 
+
+	// Opens the EndGameActivity, which sorts out highscores etc.
 	
-	// ISSUE: Crashes if the model says that it's data has been changed. 
+	private void endGame()
+	{
+		Intent intent = new Intent(context, EndGameActivity.class);
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		String score = Float.toString(mBallModel.getScore());
+		intent.putExtra(SCORE, score);
+		
+		context.startActivity(intent);
+	}
+	
+	// sets the user up for another go.
+	private void restart()
+	{
+		mBallModel.setScore(0);
+		mBallModel.setX(mViewWidth / 2);
+		mBallModel.setY(mViewHeight / 2);
+		mBallModel.setSpeed(3);
+	}
+	
+	// Creates an anonymous timer class
+	// to implement a score addition timer
+	// that adds .getScoreAdditionRate() points each time it runs.
+	// For a visual effect, the points are added every 50ms
+	
+	// ISSUE: Crashes if the model says that it's data has been changed.
 	public void scoreTimer()
 	{
 		Timer timer = new Timer();
@@ -97,18 +136,12 @@ public class BallController {
 			
 			@Override
 			public void run()
-			{
-				int currentScore = mBallModel.getScore();
-				
-				if(currentScore > 0)
-				{
-					mBallModel.setScore(currentScore - mBallModel.getScoreDeductionRate() / 100);
-				}
-				
+			{ 
+				mBallModel.setScore(mBallModel.getScore() + mBallModel.getScoreAdditionRate());	
 			}
 		};
 		
-		timer.schedule(task,  10, 10); // (Task, when to start, when to repeat)
+		timer.schedule(task,  50, 50); // (Task, when to start, when to repeat)
 	}
 	
 	public void updateViewSize(int viewWidth, int viewHeight) {

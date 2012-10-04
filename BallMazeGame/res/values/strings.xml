@@ -1,40 +1,46 @@
 <resources>
 
-<!--     General app     -->
+    <!-- General app -->
     <string name="app_name">BallMazeGame</string>
     <string name="menu_settings">Settings</string>
-    
-<!--     Activities  -->
+
+    <!-- Activities -->
     <string name="title_activity_main">Ball Maze Game</string>
     <string name="title_activity_tiltaball_view">TiltaballView</string>
     <string name="title_activity_how_to">HowToActivity</string>
     <string name="title_activity_high_score">HighScoreActivity</string>
     <string name="title_activity_credits">CreditsActivity</string>
-
+    <string name="title_activity_end_game">EndGameActivity</string>
     
-<!--   Main Menu & Menu Buttons    -->
+    <!-- Main Menu & Menu Buttons -->
     <string name="start_game">Start Game</string>
     <string name="How_to_play">How to Play</string>
     <string name="Credits">Credits</string>
     <string name="High_score">High Scores</string>
     <string name="Quit_game">Quit Game</string>
     <string name="imageDescription">Main Menu Background</string>
-    
-<!--    Activity - How To Play   -->
+
+    <!-- Activity - How To Play -->
     <string name="howToPlayGame1">Tilt your phone in the direction you want to move.</string>
     <string name="howToPlayGame2">The goal of the game is to survive for as long as you can without hitting the edge of your screen.</string>
     <string name="howToImage1">Tilt</string>
-    
-<!--     Activity - Credits    -->
+
+    <!-- Activity - Credits -->
     <string name="creditsMain">Credits</string>
     <string name="creators">This game was created by Christian Stokkebekk, Christian Holt and
         Øyvind Nordli for an assignment in Mobile Systems Programming at Gjøvik University College (GUC)</string>
 
-<!--     Activity - High Score    -->
+    <!-- Activity - High Score -->
     <string name="highScoreMain">High Score</string>
     <string name="loading">Please wait, loading data</string>
+
+    <!-- Activity - TiltaballView (Main Game) -->
+    <string name="score">Score: </string>
     
-<!--     Activity - TiltaballView (Main Game)     -->
-	<string name="score">Score: </string>
-	
+	<!--     Activity - End Game  -->
+    <string name="hint_namefield">Enter your name here...</string>
+    <string name="button_quit">Quit</string>
+    <string name="button_submit">Submit and Restart</string>
+
+
 </resources>

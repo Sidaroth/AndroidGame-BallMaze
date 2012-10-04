@@ -25,7 +25,7 @@ import android.util.Log;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 
-public class HighScoreActivity extends ListActivity implements AsyncTaskCompleteListener<JSONObject> {
+public class HighscoreActivity extends ListActivity implements AsyncTaskCompleteListener<JSONObject> {
 
 	ArrayList<HashMap <String, String>> mylist; 
 	
@@ -153,13 +153,13 @@ public class HighScoreActivity extends ListActivity implements AsyncTaskComplete
 	}
 	
 	// Converts the get response from an input stream to a string. 
-	public static String convertToString(InputStream getResponse)
+	public static String convertToString(InputStream postResponse)
 	{
 		String result = "";
 		
 	    try
 	    {
-    		BufferedReader reader = new BufferedReader(new InputStreamReader(getResponse, "iso-8859-1"), 8);
+    		BufferedReader reader = new BufferedReader(new InputStreamReader(postResponse, "iso-8859-1"), 8);
             StringBuilder stringBuilder = new StringBuilder();
             String line = null;
             
