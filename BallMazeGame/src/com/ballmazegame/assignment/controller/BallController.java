@@ -113,15 +113,7 @@ public class BallController {
 		context.startActivity(intent);
 	}
 	
-	// sets the user up for another go.
-	private void restart()
-	{
-		mBallModel.setScore(0);
-		mBallModel.setX(mViewWidth / 2);
-		mBallModel.setY(mViewHeight / 2);
-		mBallModel.setSpeed(3);
-	}
-	
+
 	// Creates an anonymous timer class
 	// to implement a score addition timer
 	// that adds .getScoreAdditionRate() points each time it runs.

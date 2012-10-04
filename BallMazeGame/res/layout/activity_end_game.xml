@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+       
+    
+	<TextView
+	    android:id="@+id/highscore_main"
+	    style="@style/MenuFont"
+	    android:layout_width="wrap_content"
+	    android:layout_gravity="left"
+	   />
+	
+	<EditText 
+	    android:id="@+id/namefield"
+	    style="@style/MenuFont"
+	    android:layout_below="@id/highscore_main"
+	    android:layout_width="wrap_content"
+	    android:hint="@string/hint_namefield"
+	    />
+	
+	<Button 
+	    android:id="@+id/button_quit"
+	    android:layout_below="@id/namefield"
+	    android:layout_height="wrap_content"
+     	android:layout_width="wrap_content"
+    	android:text="@string/button_quit"
+    	android:onClick="Quit" />
+	
+	<Button 
+	    android:id="@+id/button_submit"
+	    android:layout_marginLeft="10dp"
+	    android:layout_below="@id/namefield"
+	    android:layout_toRightOf="@id/button_quit"
+	    android:layout_height="wrap_content"
+     	android:layout_width="wrap_content"
+    	android:text="@string/button_submit"
+    	android:onClick="Submit" />
+	
+
+	
+	<TextView
+	    android:id="@+id/submitted"
+	    style="@style/MenuFont"
+	    android:layout_width="wrap_content"
+	    android:layout_gravity="center"
+	    />
+	
+</RelativeLayout>

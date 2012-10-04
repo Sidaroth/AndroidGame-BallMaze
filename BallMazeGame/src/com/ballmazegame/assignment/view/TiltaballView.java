@@ -1,6 +1,9 @@
 package com.ballmazegame.assignment.view;
 
+import com.ballmazegame.assignment.MainActivity;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -44,6 +47,11 @@ public class TiltaballView extends Activity implements SensorEventListener {
 	     setContentView(mDrawView);
 	 }
 	
+	@Override
+	public void onBackPressed() {
+	   Intent setIntent = new Intent(this, MainActivity.class);
+	   startActivity(setIntent);
+	}
 	
 	// This is called each time the sensor gets new data. 
      public void onSensorChanged(SensorEvent event) {
