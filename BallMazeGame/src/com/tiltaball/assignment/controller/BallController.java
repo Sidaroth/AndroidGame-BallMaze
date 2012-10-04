@@ -62,6 +62,10 @@ public class BallController {
 			}
 			
 		}
+		else if(yDirection == 1 || yDirection == -1)
+		{
+			xDirection = 0;
+		}
 		
 		if ( currY > POS_NOISE_FILTER || currY < NEG_NOISE_FILTER )
 		{
@@ -75,7 +79,13 @@ public class BallController {
 				yDirection = -1;
 			}
 		}
+		else if(xDirection == 1 || xDirection == -1)
+		{
+			yDirection = 0;
+		}
 		
+		
+		// Check to see if out of bounds. 
 		if ( xPosition > ( mViewWidth - mBallModel.getRadius() ))
 		{
 			endGame();
