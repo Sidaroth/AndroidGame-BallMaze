@@ -26,7 +26,7 @@ public class BallModel extends Observable
 		x = 700;
 		y = 350;
 		speed = 3;
-		ballRadius = 10.0f;
+		ballRadius = 15.0f;
 		
 		score = 0;
 		SCORE_ADDITION_RATE = 2.5f;

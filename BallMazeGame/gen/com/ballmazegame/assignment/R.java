@@ -19,6 +19,7 @@ public final class R {
         public static final int main_menu_standing=0x7f020005;
         public static final int maze1=0x7f020006;
         public static final int start=0x7f020007;
+        public static final int title_screen=0x7f020008;
     }
     public static final class id {
         public static final int button_quit=0x7f060004;

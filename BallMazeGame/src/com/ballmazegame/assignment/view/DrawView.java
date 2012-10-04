@@ -47,8 +47,6 @@ public class DrawView extends View implements Observer {
 		paint.setColor(Color.RED);
 		
 		paint.setTextSize(30);
-		canvas.drawText(Float.toString(mController.mBallModel.getX()) + " , " + Float.toString(mController.mBallModel.getY()), 800, 200, paint);
-		canvas.drawText("Speed: " + Float.toString(mController.mBallModel.getSpeed()), 950, 100, paint);
 		canvas.drawText("Score: " + Float.toString(mController.mBallModel.getScore()), 950, 50, paint);
 		canvas.drawCircle(mController.mBallModel.getX(), mController.mBallModel.getY(), mController.mBallModel.getRadius(), paint);
 	}

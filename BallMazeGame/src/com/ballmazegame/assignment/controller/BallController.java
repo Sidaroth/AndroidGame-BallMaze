@@ -37,10 +37,9 @@ public class BallController {
 	
 	public void moveBall( float currX, float currY )
 	{
-		// If above noise levels, change direction. Else keep moving at same speed. 
+		// If above noise levels, change direction. Else keep moving in the same direction. 
 		
-		// NOTE! in xPosition and yPosition, the opposite .get() is called
-		// This is due to the screen being landscape oriented - So in a way X = Y, and Y = X. 
+
 		float xPosition = mBallModel.getX();
 		float yPosition = mBallModel.getY();
 		
@@ -119,7 +118,6 @@ public class BallController {
 	// that adds .getScoreAdditionRate() points each time it runs.
 	// For a visual effect, the points are added every 50ms
 	
-	// ISSUE: Crashes if the model says that it's data has been changed.
 	public void scoreTimer()
 	{
 		Timer timer = new Timer();
