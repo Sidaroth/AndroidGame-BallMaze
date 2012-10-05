@@ -29,7 +29,8 @@ public class EndGameActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	requestWindowFeature(Window.FEATURE_NO_TITLE); //hide title bar
-		 //set app to full screen and keep screen on 
+		
+    	//set app to full screen and keep screen on 
 		getWindow().setFlags(0xFFFFFFFF, LayoutParams.FLAG_FULLSCREEN | LayoutParams.FLAG_KEEP_SCREEN_ON);	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end_game);
@@ -40,12 +41,16 @@ public class EndGameActivity extends Activity {
         score = intent.getStringExtra(BallController.SCORE);
         
         TextView highscore_main = (TextView) findViewById(R.id.highscore_main);
-	    TextView submitted = (TextView) findViewById(R.id.submitted);
+        TextView highscore_score = (TextView) findViewById(R.id.highscore_score);
+	    TextView highscore_main2 = (TextView) findViewById(R.id.highscore_main2);
 	    
 	    highscore_main.setTypeface(typeface);
-	    submitted.setTypeface(typeface);		// Set the custom typeface. 
+	    highscore_score.setTypeface(typeface);
+	    highscore_main2.setTypeface(typeface);		// Set the custom typeface. 
         
-        highscore_main.setText("Your score was : " + score + "\n\nEnter a name and press submit to check for highscore!");
+        highscore_main.setText(R.string.highscore_main);
+        highscore_score.setText(score);
+        highscore_main2.setText(R.string.highscore_main2);
     }
     
     // Does the networking in a background thread. 

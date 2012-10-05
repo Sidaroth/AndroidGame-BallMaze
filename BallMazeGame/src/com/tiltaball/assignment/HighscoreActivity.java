@@ -56,15 +56,18 @@ public class HighscoreActivity extends ListActivity implements AsyncTaskComplete
     	{
             JSONArray highscores = result.getJSONArray("highscore");
             
+            String name = getString(R.string.name);
+            String score = getString(R.string.highscore);
+            
 	        for(int i = 0; i < highscores.length(); i++)
 	        {
 				HashMap<String, String> map = new HashMap<String, String>();	
 				JSONObject e = highscores.getJSONObject(i);
 				
-				// TODO fix strings
-				map.put("placement", String.valueOf( i+1 ) + ".");
-	        	map.put("name", "Name:  " + e.getString( "name" ));
-	        	map.put("time", "Score:  " + e.getString( "time" ));
+				
+				map.put("placement", String.valueOf( i + 1 ) + ".");
+	        	map.put("name", name + e.getString( "name" ));
+	        	map.put("time", score + e.getString( "time" ));
 	        	mylist.add(map);
 			}        
     	} 

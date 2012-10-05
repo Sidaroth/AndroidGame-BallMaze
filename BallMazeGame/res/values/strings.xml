@@ -32,12 +32,16 @@
 
     <!-- Activity - High Score -->
     <string name="highScoreMain">High Score</string>
+    <string name="name">Name:\t</string>
+    <string name="highscore">Score:\t</string>
     <string name="loading">Please wait, loading data</string>
 
     <!-- Activity - TiltaballView (Main Game) -->
     <string name="score">Score: </string>
     
 	<!--     Activity - End Game  -->
+	<string name="highscore_main">Your score was:\t\t</string>
+	<string name="highscore_main2">Press submit to check for highscore</string>
     <string name="hint_namefield">Enter your name here...</string>
     <string name="button_quit">Quit</string>
     <string name="button_submit">Submit and Restart</string>

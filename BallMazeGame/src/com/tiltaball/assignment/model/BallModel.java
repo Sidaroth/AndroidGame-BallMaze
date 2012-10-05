@@ -12,6 +12,8 @@ public class BallModel extends Observable
 {
 	private float x;
 	private float y;
+	private int xDirection;
+	private int yDirection;
 	
 	private int speed;
 	private float ballRadius;
@@ -25,9 +27,11 @@ public class BallModel extends Observable
 	{
 		x = 700;
 		y = 350;
+		xDirection = -1;
+		yDirection = -1;
 		speed = 3;
-		ballRadius = 15.0f;
 		
+		ballRadius = 15.0f;
 		score = 0;
 		SCORE_ADDITION_RATE = 2.5f;
 	}
@@ -66,6 +70,26 @@ public class BallModel extends Observable
 		this.speed = speed;
 		setChanged();
 		notifyObservers();
+	}
+	
+	public int getXDirection()
+	{
+		return xDirection;
+	}
+	
+	public void setXDirection(int xDir)
+	{
+		xDirection = xDir;
+	}
+	
+	public int getYDirection()
+	{
+		return yDirection;
+	}
+	
+	public void setYDirection(int yDir)
+	{
+		yDirection = yDir;
 	}
 	
 	public float getRadius()

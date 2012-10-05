@@ -20,7 +20,6 @@ public class BallController {
 	private int mViewWidth, mViewHeight;
 	Context context;
 	
-	private int xDirection, yDirection;
 	
 	
 	public BallController(Context context)
@@ -30,8 +29,7 @@ public class BallController {
 		
 		POS_NOISE_FILTER = 0.5f;
 		NEG_NOISE_FILTER = POS_NOISE_FILTER * -1;
-		xDirection = -1;
-		yDirection = -1;
+		
 		
 		this.context = context;
 		scoreTimer();
@@ -54,17 +52,17 @@ public class BallController {
 		{
 			if ( currX > 0 )
 			{
-				xDirection = 1;
+				mBallModel.setXDirection(1);
 			}
 			else
 			{
-				xDirection = -1;
+				mBallModel.setXDirection(-1);
 			}
 			
 		}
-		else if(yDirection == 1 || yDirection == -1)
+		else if(mBallModel.getYDirection() == 1 || mBallModel.getYDirection() == -1)
 		{
-			xDirection = 0;
+			mBallModel.setXDirection(0);
 		}
 		
 		if ( currY > POS_NOISE_FILTER || currY < NEG_NOISE_FILTER )
@@ -72,16 +70,16 @@ public class BallController {
 						
 			if ( currY > 0 )
 			{
-				yDirection = 1;
+				mBallModel.setYDirection(1);
 			}
 			else
 			{
-				yDirection = -1;
+				mBallModel.setYDirection(-1);
 			}
 		}
-		else if(xDirection == 1 || xDirection == -1)
+		else if(mBallModel.getXDirection() == 1 || mBallModel.getXDirection() == -1)
 		{
-			yDirection = 0;
+			mBallModel.setYDirection(0);
 		}
 		
 		
@@ -105,10 +103,8 @@ public class BallController {
 		}
 		
 		
-		mBallModel.setY( mBallModel.getY() + (mBallModel.getSpeed() * xDirection ));
-		mBallModel.setX( mBallModel.getX() + (mBallModel.getSpeed() * yDirection ));
-		
-
+		mBallModel.setY( mBallModel.getY() + (mBallModel.getSpeed() * mBallModel.getXDirection() ));
+		mBallModel.setX( mBallModel.getX() + (mBallModel.getSpeed() * mBallModel.getYDirection() ));
 	}
 
 

@@ -32,12 +32,16 @@
 
     <!-- Activity - High Score -->
     <string name="highScoreMain">High Score</string>
+    <string name="name">Navn:\t</string>
+    <string name="highscore">Poeng:\t</string>
     <string name="loading">Vennligst vent, laster data</string>
 
     <!-- Activity - TiltaballView (Main Game) -->
     <string name="score">Poeng: </string>
     
 	<!--     Activity - End Game  -->
+	<string name="highscore_main">Din poengsum:\t\t</string>
+	<string name="highscore_main2">Send for å legge inn i poenglisten</string>
     <string name="hint_namefield">Skriv navnet ditt her...</string>
     <string name="button_quit">Avslutt</string>
     <string name="button_submit">Send og Restart</string>
